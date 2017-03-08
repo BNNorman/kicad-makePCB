@@ -1,0 +1,167 @@
+# RING of LEDs
+#
+# I have added the syntax of the commands when first used just to help
+# humans reading this.
+#
+
+# the ASIS templates have no %...% placeholders
+# ASIS,Id,file
+ASIS,HEADER,templates\Header.txt
+
+# standard templates have %....% placeholders
+# I keep these in a separate folder from the components
+#TEMPLATE,Id,file
+TEMPLATE,SEGMENT,templates\Segment.txt
+TEMPLATE,VIA,templates\via.txt
+TEMPLATE,TARGET,templates\Target.txt
+TEMPLATE,GRLINE,templates\GRline.txt
+TEMPLATE,FIDUCIAL,templates\Fiducial.txt
+TEMPLATE,GRCIRCLE,templates\GRcircle.txt
+TEMPLATE,MOUNT,templates\Mounting Hole.txt
+TEMPLATE,GRTEXT,templates\Text.txt
+TEMPLATE,GRARC,templates\Arc.txt
+TEMPLATE,ZONE,templates\Zone.txt
+TEMPLATE,KEEPOUT,templates\KeepOut.txt
+#
+# load my components just a LED and cap
+#
+TEMPLATE,WS2812B,components\WS2812B.txt
+TEMPLATE,CAP,components\Capacitors SMD.txt
+
+# always, always first
+# this is the first thing written to the kicad_pcb file
+# if you don't do this then pcbnew will throw a wobbly
+HEADER
+
+
+# show where 0,0 is - it's somewhere top-left of the drawing
+# this is just cosmetic
+#
+#TARGET,SHAPE,x,y,size,line-width,layer
+TARGET,plus,0,0,5,0.15,F.SilkS
+#GRAPHIC,TEXT, JUSTIFY, Xpos, Ypos, Angle,Size, Thickness, Layer, Text
+GRAPHIC,TEXT,CENTER,0,-5,0,2,.2,Edge.Cuts,Normal KiCad origin
+
+# set the origin and XY direction
+#
+# move the origin down so we can use human friendly coordinates
+# instead of KiCad's top down
+# ORIGIN,X,Y
+ORIGIN,20,190
+# we also need to reverse the Y direction
+#SETDIRECTIION,X,Y
+SETDIRECTION,1,-1
+
+# more eyecandy show where the new origin is
+#
+TARGET,plus,0,0,5,0.15,F.SilkS
+GRAPHIC,TEXT,CENTER,0,-5,0,2,.2,Edge.Cuts,New Origin
+
+# Drawing heading
+GRAPHIC,TEXT,CENTER,205,170,0,5,.5,F.SilkS,LED RING DEMO
+
+# LED_CAP group
+#
+# groups my LED and CAP together
+# the coordinates are relative to each other
+# signal and power connecting tracks added
+#DEFGROUP,Id - must end with and ENDGROUP
+#
+DEFGROUP,LED_CAP
+# use my LED
+# LED,ref,X,Y,Angle,Layer
+WS2812B,L,0,0,0,F.Cu
+
+# use my capacitor
+# CAP,ref,X,Y,Angle,Layer
+CAP,C,-90,6,0,F.Cu
+
+#
+# add short tracks for linking
+#
+
+# LED pin 1 5V
+#SEGMENT,type,X0,Y0,X1,Y1,Width,Layer,Net
+SEGMENT,LINE,-2.5,2,-2.5,5,1,F.Cu,0
+
+# LED pin 2 DOUT
+SEGMENT,LINE,-2.5,-2,-2.5,0,.1,F.Cu,0
+SEGMENT,LINE,-2.5,0,-4.5,0,.1,F.Cu,0
+# output the cordinates needed to connect to the DOUT
+ECHO,DOUT,-4.5,0
+
+# LED pin 4 DIN
+SEGMENT,LINE,2.5,2,2.5,0,.1,F.Cu,0
+SEGMENT,LINE,2.5,0,7.5,0,.1,F.Cu,0
+# output the cordinates needed to connect to the DIN
+ECHO,DIN,7.5,0
+
+# LED pin 3 GND
+SEGMENT,LINE,2.5,-2,2.5,-5,1,F.Cu,0
+
+# capacitor 5V
+SEGMENT,LINE,6,2,6,5,1,F.Cu,0
+
+# capacitor GND
+SEGMENT,LINE,6,-2,6,-5,1,F.Cu,0
+ENDGROUP
+
+# define a ring using just the LED_CAP group
+# this will be generated next
+DEFRING,RING1
+GROUP,LED_CAP,0,0,0
+ENDRING
+
+# draw the LED_CAP ring
+#
+# 10 instances of RING1 spaced out 36 degrees
+# ring Mode is -90 to make connecting power using a circular tracks
+#
+# RING ringId, Xpos, Ypos, Radius,Mode,startAngle,Counter,stepAngle
+RING,RING1,100,100,50,-90,0,10,36
+
+# Power supply ring
+# draw a couple of circles on the F.Cu layer for power tracks
+# smoothing is set to 360 which gives 1 degree per track step
+
+SEGMENT,CIRCLE,100,100,55.4,360,1,F.Cu,0
+SEGMENT,CIRCLE,100,100,45,360,1,F.Cu,0
+
+
+# add segments to daisy chain link din-dout
+# if the ring is moved this will break
+# you could make these relative to 0,0 then move the origin
+# to position them
+
+SEGMENT,LINE,150,104.5,144.8592391,123.3216352,.1,F.Cu,0
+SEGMENT,LINE,137.8058161,133.0298391,122.5837736,145.2351984,.1,F.Cu,0
+SEGMENT,LINE,111.1710954,148.9434023,91.68207415,149.8704533,.1,F.Cu,0
+SEGMENT,LINE,80.26939596,146.1622493,63.95753967,135.4568901,.1,F.Cu,0
+SEGMENT,LINE,56.90411665,125.7486861,50,107.5,.1,F.Cu,0
+SEGMENT,LINE,50,95.5,55.14076089,76.67836484,.1,F.Cu,0
+SEGMENT,LINE,62.19418392,66.97016091,77.41622641,54.76480164,.1,F.Cu,0
+SEGMENT,LINE,88.8289046,51.05659771,108.31792584653371 , 50.12954672743021,.1,F.Cu,0
+SEGMENT,LINE,119.730604,53.83775066,136.0424603265538 , 64.54310992756422,.1,F.Cu,0
+
+
+# 3 fiducials at PCB corners
+#FIDUCIAL,REF,X,Y,Clearance,Line-Width,Layer
+FIDUCIAL,FID,35,35,0.508,0.15,Edge.Cuts
+FIDUCIAL,FID,165,35,0.508,0.15,Edge.Cuts
+FIDUCIAL,FID,35,165,0.508,0.15,Edge.Cuts
+
+# PCB outline
+# GRAPHIC,RECT,X,Y,width,height,line-width,layer
+GRAPHIC,RECT,35,35,130,130,0.2,Edge.cuts
+
+# 4 mounting points (2.2mm drill)
+#
+# MOUNT, REF, X, Y, Drill-Radius, Outer-Radius, Inner-Width, Outer-Width
+MOUNT,MTG,45,45,2.2,2.45,0.15,0.05
+MOUNT,MTG,45,155,2.2,2.45,0.15,0.05
+MOUNT,MTG,155,45,2.2,2.45,0.15,0.05
+MOUNT,MTG,155,155,2.2,2.45,0.15,0.05
+
+# mark the centre of the ring and add a disclaimer
+TARGET,plus,100,100,5,0.15,F.SilkS
+GRAPHIC,TEXT,CENTER,100,95,0,2,.1,F.SilkS,Unfinished work\nIt's just a demo\nSee RINGVARS for a better way

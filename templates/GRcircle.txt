@@ -1,0 +1,1 @@
+  (gr_circle (center %XPOS1% %YPOS1%) (end %XPOS2% %YPOS2%) (layer %LAYER%) (width %WIDTH%))

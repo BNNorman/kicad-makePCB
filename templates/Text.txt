@@ -1,0 +1,3 @@
+ (gr_text "%TEXT%" (at %XPOS% %YPOS% %ANGLE%) (layer %LAYER%)
+    (effects (font (size %SIZE% %SIZE%) (thickness %THICKNESS%)) %JUSTIFY% )
+  )

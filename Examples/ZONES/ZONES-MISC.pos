@@ -1,0 +1,83 @@
+# ZONES
+
+# the ASIS templates have no %...% placeholders
+ASIS,HEADER,templates\Header.txt
+
+# standard templates have %....% placeholders
+# I keep these in a separate folder from the components
+
+TEMPLATE,SEGMENT,templates\Segment.txt
+TEMPLATE,VIA,templates\via.txt
+TEMPLATE,TARGET,templates\Target.txt
+TEMPLATE,GRLINE,templates\GRline.txt
+TEMPLATE,FIDUCIAL,templates\Fiducial.txt
+TEMPLATE,GRCIRCLE,templates\GRcircle.txt
+TEMPLATE,MOUNT,templates\Mounting Hole.txt
+TEMPLATE,GRTEXT,templates\Text.txt
+TEMPLATE,GRARC,templates\Arc.txt
+TEMPLATE,ZONE,templates\Zone.txt
+TEMPLATE,KEEPOUT,templates\KeepOut.txt
+#
+# my components - in their own folder
+#
+TEMPLATE,WS2812B,components\WS2812B.txt
+TEMPLATE,CAP,components\Capacitors SMD.txt
+
+# lets' get going ...
+# move the origin down to the bottom left
+ORIGIN,0,190
+# my Y direction is UP
+SETDIRECTION,1,-1
+
+# always, always first
+HEADER
+
+# headings
+# text:  Justify, Xpos, Ypos, Angle, Size, Thickness, Layer, Text
+GRAPHIC,TEXT,CENTER ,150 ,170,0,4,.25,F.SilkS,This is a ZONE demo page
+GRAPHIC,TEXT,CENTER ,150 ,160,0,4,.25,F.SilkS,KEEPOUT zones are the same
+
+# show where 0,0 is - it's somewhere top-left of the drawing
+# target x,y,size,line-width,Layer
+TARGET,plus,0,0,5,0.15,F.SilkS
+GRAPHIC,TEXT,LEFT,-5,-5,0,2,.25,F.SilkS,Origin now here
+
+
+# ZONE,ROUNDEDRECT,X,Y,Width,Height, Radius,Smooth,Net,NetName,Layer,Hatch-Type,Hatch-Edge,clearance,min-thickness,fill-arc-segment,thermal-gap,fill-thermal-bridge
+ZONE,ROUNDEDRECT,25,35,50,30,5,10,0,,F.Cu,full,0.508,0.508,0.254,16,0.508,.508
+GRAPHIC,TEXT,LEFT,25,30,0,2,.25,F.SilkS,ZONE=ROUNDEDRECT
+
+# ZONE,RECT,X,Y,Width,Height, Net,NetName,Layer,Hatch-Type,Hatch-Edge,clearance,min-thickness,fill-arc-segment,thermal-gap,fill-thermal-bridge
+ZONE,RECT,80,35,50,30,0,,F.Cu,full,0.508,0.508,0.254,16,0.508,.508
+GRAPHIC,TEXT,LEFT,80,30,0,2,.25,F.SilkS,ZONE=RECT
+
+#ZONE HOLLOWRECT,X,Y,outerW,outerH,innerW,innerH,Net,NetName,Layer,Hatch-Type,Hatch-Edge,clearance,min-thickness,fill-arc-segment,thermal-gap,fill-thermal-bridge
+ZONE,HOLLOWRECT,140,35,50,30,20,15,0,,F.Cu,full,0.508,0.508,0.254,16,0.508,.508
+GRAPHIC,TEXT,LEFT,140,30,0,2,.25,F.SilkS,ZONE=HOLLOWRECT
+
+# ZONE,CROSS,X,Y,width,height,thickness,Net,NetName,Layer,Hatch-Type,Hatch-Edge,clearance,min-thickness,fill-arc-segment,thermal-gap,fill-thermal-bridge
+ZONE,CROSS,195,35,25,45,10,0,,F.Cu,full,0.508,0.508,0.254,16,0.508,0.508
+GRAPHIC,TEXT,LEFT,195,30,0,2,.25,F.SilkS,ZONE=CROSS (Tall)
+
+# ZONE,CROSS,X,Y,width,height,thickness,Net,NetName,Layer,Hatch-Type,Hatch-Edge,clearance,min-thickness,fill-arc-segment,thermal-gap,fill-thermal-bridge
+ZONE,CROSS,235,35,45,20,15,0,,F.Cu,full,0.508,0.508,0.254,16,0.508,0.508
+GRAPHIC,TEXT,LEFT,235,30,0,2,.25,F.SilkS,ZONE=CROSS (Fat)
+
+# ZONE,CIRCLE,X,Y,Radius,Smoothing, Net,NetName,Layer,Hatch-Type,Hatch-Edge,clearance,min-thickness,fill-arc-segment,thermal-gap,fill-thermal-bridge
+ZONE,CIRCLE,50,120,25,100,0,,F.Cu,full,0.508,0.508,0.254,16,0.508,0.508
+GRAPHIC,TEXT,CENTER,50,115,0,2,.25,F.SilkS,ZONE=CIRCLE
+
+# ZONE,DONUT,X,Y,InnerRadius,OuterRadius,startAngle,stopAngle,Smooth,Net,NetName,Layer,Hatch-Type,Hatch-Edge,clearance,min-thickness,fill-arc-segment,thermal-gap,fill-thermal-bridge
+ZONE,DONUT,120,120,10,25,45,360,100,0,,F.Cu,full,0.508,0.508,0.254,16,0.508,.508
+GRAPHIC,TEXT,CENTER,120,115,0,2,.25,F.SilkS,ZONE=DONUT - OPEN
+
+# ZONE,DONUT,X,Y,InnerRadius,OuterRadius,startAngle,stopAngle,Smooth,Net,NetName,Layer,Hatch-Type,Hatch-Edge,clearance,min-thickness,fill-arc-segment,thermal-gap,fill-thermal-bridge
+ZONE,DONUT,190,120,20,25,0,360,360,0,,F.Cu,full,0.508,0.508,0.254,16,0.508,.508
+GRAPHIC,TEXT,CENTER,190,115,0,2,.25,F.SilkS,ZONE=DONUT - CLOSED
+
+# ZONE,PIE,X,Y,Radius,startAngle,stopAngle,Smoothing,Net,NetName,Layer,Hatch-Type,Hatch-Edge,clearance,min-thickness,fill-arc-segment,thermal-gap,fill-thermal-bridge
+ZONE,PIE,260,120,25,45,180,100,0,,F.Cu,full,0.508,0.508,0.254,16,0.508,0.508
+GRAPHIC,TEXT,CENTER,260,115,0,2,.25,F.SilkS,ZONE=PIE
+
+
+

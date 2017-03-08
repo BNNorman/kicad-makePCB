@@ -1,0 +1,87 @@
+# REPEAT - horizontal line of 5 components
+
+# the ASIS templates have no %...% placeholders
+ASIS,HEADER,templates\Header.txt
+
+# standard templates have %....% placeholders
+# I keep these in a separate folder from the components
+
+TEMPLATE,SEGMENT,templates\Segment.txt
+TEMPLATE,VIA,templates\via.txt
+TEMPLATE,TARGET,templates\Target.txt
+TEMPLATE,GRLINE,templates\GRline.txt
+TEMPLATE,FIDUCIAL,templates\Fiducial.txt
+TEMPLATE,GRCIRCLE,templates\GRcircle.txt
+TEMPLATE,MOUNT,templates\Mounting Hole.txt
+TEMPLATE,GRTEXT,templates\Text.txt
+TEMPLATE,ZONE,templates\Zone.txt
+TEMPLATE,KEEPOUT,templates\KeepOut.txt
+#
+# my components - in their own folder
+#
+TEMPLATE,WS2812B,components\WS2812B.txt
+TEMPLATE,CAP,components\Capacitors SMD.txt
+
+# lets' get going ...
+
+# always, always first
+HEADER
+
+# show where real 0,0 is - it's somewhere top-left of the drawing
+TARGET,plus,0,0,5,0.15,F.SilkS
+
+#Align,Xpos,Ypos,Angle,Size,Thickness,Layer,Text
+GRAPHIC,TEXT,CENTER,5,5,0,2,.25,F.SilkS,Real Origin
+
+# move the origin to bottom left
+ORIGIN,0,190
+
+# show where real 0,0 is - it's somewhere top-left of the drawing
+TARGET,plus,0,0,5,0.15,F.SilkS
+
+# heading text
+#Align,Xpos,Ypos,Angle,Size,Thickness,Layer,Text
+GRAPHIC,TEXT,CENTER,145,170,0,5,.25,F.SilkS,REPEAT demo
+
+#Align,Xpos,Ypos,Angle,Size,Thickness,Layer,Text
+GRAPHIC,TEXT,CENTER,5,-5,0,2,.25,F.SilkS,New Origin
+
+# makePCB uses bottom up Y co-ords
+# this is the default but you can change it
+SETDIRECTION,1,-1
+
+# group my LED and CAP together
+# the coordinates are relative to each other
+DEFREPEAT,LED_CAP
+# LED,reference letters,X,Y,Angle,Layer
+WS2812B,L,0,0,0,F.Cu
+# CAP,reference letters,X,Y,Angle,Layer
+CAP,C,270,6,0,F.Cu
+ENDREPEAT
+
+# horizontal line of components
+# start at 30,35 angle 0, 5 copies Xstep=20, Ystep=0, stepAngle=0
+REPEAT,LED_CAP,30,35,0,5,20,0,0
+GRAPHIC,TEXT,LEFT,30,25,0,2,.25,F.SilkS,Horizontal line Xstep=15
+
+REPEAT,LED_CAP,150,35,180,5,20,0,0
+GRAPHIC,TEXT,LEFT,150,25,0,2,.25,F.SilkS,Horizontal line Xstep=15 flipped 180 degrees
+
+# Horizontal line with each component rotated at an angle
+REPEAT,LED_CAP,30,75,45,5,20,0,0
+GRAPHIC,TEXT,LEFT,30,65,0,2,.25,F.SilkS,Horizontal line Xstep=15 fixed angle 45 degrees
+
+# again with each component rotating by 30 degrees
+REPEAT,LED_CAP,150,75,0,5,20,0,30
+GRAPHIC,TEXT,LEFT,150,65,0,2,.25,F.SilkS,With components rotating 30 degrees
+
+
+# draw a diagonal repeat bottom up
+REPEAT,LED_CAP,30,100,45,5,20,10,0
+GRAPHIC,TEXT,LEFT,30,95,0,2,.25,F.SilkS,With +ve Ystep
+
+# draw a diagonal repeat top down
+REPEAT,LED_CAP,150,140,45,5,20,-10,0
+GRAPHIC,TEXT,LEFT,150,95,0,2,.25,F.SilkS,With +ve Ystep
+
+

@@ -1,0 +1,161 @@
+# RING of LEDs using VARS
+#
+# this demonstrates how you can auto-link the DIN/DOUT of
+# a ring of LEDS
+# it also demonstrates using variables
+#
+# Be aware that there will be 7 warnings due to unassigned variables
+# when a signal track is first attempted - the track will be ignored
+# and leave a gap between the first and last component in the ring
+# and that's what you want to be able to connect DIN and DOUT to the
+# outside world
+#
+
+# the vanilla header for the kicad_pcb output file
+ASIS,HEADER,templates\Header.txt
+
+# standard templates (not all used but I tend to add all in case I forget)
+
+TEMPLATE,SEGMENT,templates\Segment.txt
+TEMPLATE,VIA,templates\via.txt
+TEMPLATE,TARGET,templates\Target.txt
+TEMPLATE,GRLINE,templates\GRline.txt
+TEMPLATE,FIDUCIAL,templates\Fiducial.txt
+TEMPLATE,GRCIRCLE,templates\GRcircle.txt
+TEMPLATE,MOUNT,templates\Mounting Hole.txt
+TEMPLATE,GRTEXT,templates\Text.txt
+TEMPLATE,GRARC,templates\Arc.txt
+TEMPLATE,ZONE,templates\Zone.txt
+TEMPLATE,KEEPOUT,templates\KeepOut.txt
+
+#
+# load my components just a LED and cap
+#
+
+TEMPLATE,WS2812B,components\WS2812B.txt
+TEMPLATE,CAP,components\Capacitors SMD.txt
+TEMPLATE,JST,components\JST.txt
+
+# always, always first
+# this is the first thing written to the kicad_pcb file
+# if you don't do this then pcbnew will throw a wobbly
+
+HEADER
+
+# initial setup
+ORIGIN,20,190
+
+# Drawing heading
+GRAPHIC,TEXT,CENTER,145,170,0,5,.5,F.SilkS,LED RING DEMO\nUsing variables to link DIN-DOUT
+
+# some global variables
+SETG,SignalWidth,0.1
+SETG,PowerWidth,1
+SETG,LayerF,F.Cu
+SETG,LayerB,B.Cu
+SETG,Net,0
+SETG,centreX,100
+SETG,centreY,100
+
+# LED_CAP group
+DEFGROUP,LED_CAP
+
+# two components LED and a capacitor
+WS2812B,L,0,0,0,LayerF
+CAP,C,-90,6,0,LayerF
+
+# LED pin 2 DOUT
+SEGMENT,LINE,-2.5,-2,-2.5,0,SignalWidth,LayerF,Net
+SEGMENT,LINE,-2.5,0,-4.5,0,SignalWidth,LayerF,Net
+
+# LED pin 4 DIN
+SEGMENT,LINE,2.5,2,2.5,0,SignalWidth,LayerF,Net
+SEGMENT,LINE,2.5,0,7.5,0,SignalWidth,LayerF,Net
+
+# link this DIN to previous LED DOUT
+# this will fail the first time because DIN_X and DIN_Y have not
+# been defined (segment will not be drawn)
+# it will give two warnings like evalNumericParam exception  ("could not convert string to float: 'DIN_X'",)
+# and evalNumericParam exception  ("could not convert string to float: 'DIN_Y'",)
+# these can be ignored
+
+SEGMENT,LINE,DOUT_X,DOUT_Y,7.5,0,SignalWidth,LayerF,Net
+
+# remember this DOUT_X and DOUT_Y for the next LED's DIN
+SAVEXY,DOUT,-4.5,0
+# remember the first LED DIN so I can feed a signal into the ring
+SAVEONCEXY,DIN,7.5,0
+
+# add power tracks
+# LED pin 1 5V
+SEGMENT,LINE,-2.5,2,-2.5,5,PowerWidth,LayerF,Net
+# LED pin 3 GND
+SEGMENT,LINE,2.5,-2,2.5,-5,PowerWidth,LayerF,Net
+# capacitor 5V
+SEGMENT,LINE,6,2,6,5,PowerWidth,LayerF,Net
+# capacitor GND
+SEGMENT,LINE,6,-2,6,-5,PowerWidth,LayerF,Net
+ENDGROUP
+
+# define a ring using just the LED_CAP group
+# this will be generated next
+DEFRING,RING1
+GROUP,LED_CAP,0,0,0
+ENDRING
+
+# draw the LED_CAP ring
+#
+# 10 instances of RING1 spaced out 36 degrees
+# ring Mode is -90 to make connecting power using a circular tracks
+#
+# RING ringId, Xpos, Ypos, Radius,Mode,startAngle,Counter,stepAngle
+RING,RING1,centreX,centreY,50,-90,0,10,36
+
+# power supply tracks
+SEGMENT,CIRCLE,centreX,centreY,55.4,360,1,F.Cu,0
+SEGMENT,CIRCLE,centreX,centreY,45,360,1,F.Cu,0
+
+
+# if you give SEGMENT a SAVEXY variable to X it expects the corresponding Y
+# so save the values we want to re-use to new global variables so we can get around that
+SAVEXY,RINGIN,DIN_X,DIN_Y-5
+SAVEXY,RINGOUT,DOUT_X,DOUT_Y+5
+
+SHOWVARS
+
+# lay down vertical tracks to the DIN and DOUT signals of the ring
+# to connect to some VIAs
+SEGMENT,LINE,DIN_X,DIN_Y,RINGIN_X,RINGIN_Y,SignalWidth,LayerF,Net
+SEGMENT,LINE,DOUT_X,DOUT_Y,RINGOUT_X,RINGOUT_Y,SignalWidth,LayerF,Net
+
+VIA,RINGIN_X,RINGIN_Y,2,1,LayerF,LayerB,0
+VIA,RINGOUT_X,RINGOUT_Y,2,1,LayerF,LayerB,0
+
+# 173.35, and 106 were obtained from the coords on the drawing in Kicad
+# since Kicads xOrigin has been shifted right we need to subtract it
+# also the Y origin has been moved down so we need to take the measured value
+# away from the yOrigin (It's a headache due to KiCad drawing top to bottom)
+VIA,173.3-xOrigin,yOrigin-106,2,1,LayerF,LayerB,0
+
+# add the JST connector - pin 1 will be
+JST,J,270,centreX,centreY,LayerF
+
+# inner power track - stright to Pin1 on the JST
+SEGMENT,LINE,centreX+45,centreY,centreX,centreY,PowerWidth,LayerF,Net
+
+# the following tracks are vertically connected to the JST pins at multiples of 2.54mm,
+# ie. 2.54, 5.08 and 7.62
+
+# outer power track
+SEGMENT,LINE,173.3-xOrigin,yOrigin-106,centreX+8,yOrigin-106,PowerWidth,LayerB,Net
+SEGMENT,LINE,centreX,centreY-5.08,centreX+8,centreY-5.08,PowerWidth,LayerB,Net
+SEGMENT,LINE,centreX+8,centreY-5.08,centreX+8,yOrigin-106,PowerWidth,LayerB,Net
+
+# DIN and DOUT
+SEGMENT,LINE,RINGIN_X,RINGIN_Y,centreX+10,RINGIN_Y,SignalWidth,LayerB,Net
+SEGMENT,LINE,centreX+10,RINGIN_Y,centreX+10,centreY-2.54,SignalWidth,LayerB,Net
+SEGMENT,LINE,centreX,centreY-2.54,centreX+10,centreY-2.54,SignalWidth,LayerB,Net
+
+SEGMENT,LINE,RINGOUT_X,RINGOUT_Y,centreX+6,RINGOUT_Y,SignalWidth,LayerB,Net
+SEGMENT,LINE,centreX,centreY-7.62,centreX+6,centreY-7.62,SignalWidth,LayerB,Net
+SEGMENT,LINE,centreX+6,RINGOUT_Y,centreX+6,centreY-7.62,SignalWidth,LayerB,Net

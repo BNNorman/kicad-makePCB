@@ -1,0 +1,54 @@
+# ZONES - CIRCLES
+
+# the ASIS templates have no %...% placeholders
+ASIS,HEADER,templates\Header.txt
+
+# standard templates have %....% placeholders
+# I keep these in a separate folder from the components
+
+TEMPLATE,SEGMENT,templates\Segment.txt
+TEMPLATE,VIA,templates\via.txt
+TEMPLATE,TARGET,templates\Target.txt
+TEMPLATE,GRLINE,templates\GRline.txt
+TEMPLATE,FIDUCIAL,templates\Fiducial.txt
+TEMPLATE,GRCIRCLE,templates\GRcircle.txt
+TEMPLATE,MOUNT,templates\Mounting Hole.txt
+TEMPLATE,GRTEXT,templates\Text.txt
+TEMPLATE,GRARC,templates\Arc.txt
+TEMPLATE,ZONE,templates\Zone.txt
+TEMPLATE,KEEPOUT,templates\KeepOut.txt
+#
+# my components - in their own folder
+#
+TEMPLATE,WS2812B,components\WS2812B.txt
+TEMPLATE,CAP,components\Capacitors SMD.txt
+
+# lets' get going ...
+# move the origin down to the bottom left
+ORIGIN,0,190
+# my Y direction is UP
+SETDIRECTION,1,-1
+
+# always, always first
+HEADER
+
+GRAPHIC,TEXT,CENTER,145,170,0,2,.25,F.SilkS,ZONES CIRCLE - effect of Smoothing
+
+# ZONE,CIRCLE,X,Y,Radius,Smoothing, Net,NetName,Layer,Hatch-Type,Hatch-Edge,clearance,min-thickness,fill-arc-segment,thermal-gap,fill-thermal-bridge
+ZONE,CIRCLE,50,120,25,100,0,,F.Cu,full,0.508,0.508,0.254,16,0.508,0.508
+GRAPHIC,TEXT,CENTER,50,115,0,2,.25,F.SilkS,Smoothing=100
+
+
+# ZONE,CIRCLE,X,Y,Radius,Smoothing, Net,NetName,Layer,Hatch-Type,Hatch-Edge,clearance,min-thickness,fill-arc-segment,thermal-gap,fill-thermal-bridge
+ZONE,CIRCLE,110,120,25,10,0,,F.Cu,full,0.508,0.508,0.254,16,0.508,0.508
+GRAPHIC,TEXT,CENTER,110,115,0,2,.25,F.SilkS,Smoothing=10
+
+
+# ZONE,CIRCLE,X,Y,Radius,Smoothing, Net,NetName,Layer,Hatch-Type,Hatch-Edge,clearance,min-thickness,fill-arc-segment,thermal-gap,fill-thermal-bridge
+ZONE,CIRCLE,170,120,25,6,0,,F.Cu,full,0.508,0.508,0.254,16,0.508,0.508
+GRAPHIC,TEXT,CENTER,170,115,0,2,.25,F.SilkS,Smoothing=6
+
+
+# ZONE,CIRCLE,X,Y,Radius,Smoothing, Net,NetName,Layer,Hatch-Type,Hatch-Edge,clearance,min-thickness,fill-arc-segment,thermal-gap,fill-thermal-bridge
+ZONE,CIRCLE,230,120,25,3,0,,F.Cu,full,0.508,0.508,0.254,16,0.508,0.508
+GRAPHIC,TEXT,CENTER,230,115,0,3,.25,F.SilkS,Smoothing=6

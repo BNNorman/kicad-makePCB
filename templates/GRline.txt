@@ -1,0 +1,1 @@
+(gr_line (start %XPOS1% %YPOS1%) (end %XPOS2% %YPOS2%) (angle 90) (layer Edge.Cuts) (width %WIDTH%))

@@ -1,0 +1,40 @@
+# SEGMENT GRID
+
+
+# the ASIS templates have no %...% placeholders
+ASIS,HEADER,templates\Header.txt
+
+# standard templates have %....% placeholders
+# I keep these in a separate folder from the components
+
+TEMPLATE,SEGMENT,templates\Segment.txt
+TEMPLATE,VIA,templates\via.txt
+TEMPLATE,TARGET,templates\Target.txt
+TEMPLATE,GRLINE,templates\GRline.txt
+TEMPLATE,FIDUCIAL,templates\Fiducial.txt
+TEMPLATE,GRCIRCLE,templates\GRcircle.txt
+TEMPLATE,MOUNT,templates\Mounting Hole.txt
+TEMPLATE,GRTEXT,templates\Text.txt
+TEMPLATE,ARC,templates\Arc.txt
+TEMPLATE,ZONE,templates\Zone.txt
+TEMPLATE,KEEPOUT,templates\KeepOut.txt
+#
+# my components - in their own folder
+#
+TEMPLATE,WS2812B,components\WS2812B.txt
+TEMPLATE,CAP,components\Capacitors SMD.txt
+
+# lets' get going ...
+
+# always, always first
+HEADER
+
+# move the origin to bottom left and compensate for Kicad's Y direction
+ORIGIN,0,190
+SETDIRECTION,1,-1
+
+GRAPHIC,TEXT,CENTER,145,170,0,5,.25,F.SilkS,SEGMENT-GRID Demo
+#SEGMENT,GRID,Xpos,Ypos,Width,Height,Hgaps, Vgaps, BorderWidth, LineWidth, Layer, Net
+SEGMENT,GRID,30,50,100,100,10,10,.25,1,F.Cu,0
+
+SEGMENT,GRID,170,50,100,100,10,10,4,4,F.Cu,0

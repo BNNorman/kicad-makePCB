@@ -1,0 +1,84 @@
+# GRAPHICS Demo
+
+# the ASIS templates have no %...% placeholders
+ASIS,HEADER,templates\Header.txt
+
+# standard templates have %....% placeholders
+# I keep these in a separate folder from the components
+
+TEMPLATE,SEGMENT,templates\Segment.txt
+TEMPLATE,VIA,templates\via.txt
+TEMPLATE,TARGET,templates\Target.txt
+TEMPLATE,GRLINE,templates\GRline.txt
+TEMPLATE,FIDUCIAL,templates\Fiducial.txt
+TEMPLATE,GRCIRCLE,templates\GRcircle.txt
+TEMPLATE,MOUNT,templates\Mounting Hole.txt
+TEMPLATE,GRTEXT,templates\Text.txt
+TEMPLATE,GRARC,templates\Arc.txt
+TEMPLATE,ZONE,templates\Zone.txt
+TEMPLATE,KEEPOUT,templates\KeepOut.txt
+#
+# my components - in their own folder
+#
+TEMPLATE,WS2812B,components\WS2812B.txt
+TEMPLATE,CAP,components\Capacitors SMD.txt
+
+# lets' get going ...
+# move the origin down to the bottom left
+ORIGIN,0,190
+# my Y direction is UP
+SETDIRECTION,1,-1
+
+# always, always first
+HEADER
+
+# headings
+# text:  Justify, Xpos, Ypos, Angle, Size, Thickness, Layer, Text
+GRAPHIC,TEXT,CENTER ,150 ,170,0,4,.25,F.SilkS,This is a GRAPHIC command demo page
+GRAPHIC,TEXT,CENTER ,150 ,165,0,4,.25,F.SilkS,Targets show the XY co-ordinates of the shapes
+
+# show where 0,0 is - it's somewhere top-left of the drawing
+# target x,y,size,line-width,Layer
+TARGET,plus,0,0,5,0.15,F.SilkS
+GRAPHIC,TEXT,LEFT,-5,-5,0,2,.25,F.SilkS,Origin now here
+
+
+# line x1,y1,x2,y2,width,layer
+GRAPHIC,LINE,20,10,30,30,.5,Edge.Cuts
+TARGET,plus,20,10,5,0.15,F.SilkS
+GRAPHIC,TEXT,LEFT,30,10,0,2,.25,F.SilkS, LINE 20,10 to 30,30
+
+# circle x,y,radius,width,layer
+GRAPHIC,CIRCLE,45,125,25,.5,Edge.Cuts
+TARGET,plus,45,125,5,0.15,F.SilkS
+GRAPHIC,TEXT,CENTER,45,120,0,2,.25,F.SilkS,Circle X=45,Y=125,R=25
+
+# Pie,X,Y,Radius,StartAngle,EndAngle,LineWidth,Layer
+GRAPHIC,PIE,135,125,25,110,45,.5,Edge.Cuts
+TARGET,plus,135,125,5,0.15,F.SilkS
+GRAPHIC,TEXT,CENTER,135,120,0,2,.25,F.SilkS,PIE X=135,Y=125 R=25 \n startAngle=110 endAngle=45
+
+# Pie,X,Y,Radius,StartAngle,EndAngle,LineWidth,Layer
+GRAPHIC,PIE,195,125,25,20,45,.5,Edge.Cuts
+TARGET,plus,195,125,5,0.15,F.SilkS
+GRAPHIC,TEXT,CENTER,195,120,0,2,.25,F.SilkS,PIE X=195,Y=125 R=25 \n startAngle=20 endAngle=45
+
+
+#ArcAngle X,Y,Radius,startAngle,stopAngle,width,Layer
+GRAPHIC,ArcAngle,255,125,25,45,180,.5,Edge.Cuts
+TARGET,plus,255,125,5,0.15,F.SilkS
+GRAPHIC,TEXT,CENTER,255,120,0,2,.25,F.SilkS,ArcAngle X=255,Y=125 R=25 \n startAngle=45 endAngle=180
+
+#Rect,X,Y.Width,Height,line-width,layer
+GRAPHIC,RECT,30,60,50,25,0.15,Edge.Cuts
+TARGET,plus,30,60,5,0.15,F.SilkS
+GRAPHIC,TEXT,left,30,55,0,2,.25,F.SilkS,RECT X=30,Y=60 W=50,H=25
+
+#RoundedRect,X,Y.Width,Height,radius,line-width,layer
+GRAPHIC,ROUNDEDRECT, 100, 60,50,30,5,0.15,Edge.Cuts
+TARGET,plus,100,60,5,0.15,F.SilkS
+GRAPHIC,TEXT,left,100,55,0,2,.25,F.SilkS,ROUNDEDRECT X=150,Y=60 W=50,H=30
+
+#Grid ,Xpos, Ypos, Width, Height, Hgaps, Vgaps, BorderWidth, LineWidth, Layer = params.split(",")
+GRAPHIC,GRID,175,60,50,50,10,10,.15,.15,Edge.Cuts
+GRAPHIC,TEXT,left,175,55,0,2,.25,F.SilkS,GRID Width 50, Height 50, 10 gaps V and H

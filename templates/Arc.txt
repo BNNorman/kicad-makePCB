@@ -1,0 +1,1 @@
+  (gr_arc (start %XPOS1% %YPOS1%) (end %XPOS2% %YPOS2%) (angle %ANGLE%) (layer %LAYER%) (width %WIDTH%))

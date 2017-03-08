@@ -1,0 +1,71 @@
+# SEGARC - Drawing arcs of a circle
+
+
+# the ASIS templates have no %...% placeholders
+ASIS,HEADER,templates\Header.txt
+
+# standard templates have %....% placeholders
+# I keep these in a separate folder from the components
+
+TEMPLATE,SEGMENT,templates\Segment.txt
+TEMPLATE,VIA,templates\via.txt
+TEMPLATE,TARGET,templates\Target.txt
+TEMPLATE,GRLINE,templates\GRline.txt
+TEMPLATE,FIDUCIAL,templates\Fiducial.txt
+TEMPLATE,GRCIRCLE,templates\GRcircle.txt
+TEMPLATE,MOUNT,templates\Mounting Hole.txt
+TEMPLATE,GRTEXT,templates\Text.txt
+TEMPLATE,ARC,templates\Arc.txt
+TEMPLATE,ZONE,templates\Zone.txt
+TEMPLATE,KEEPOUT,templates\KeepOut.txt
+#
+# my components - in their own folder
+#
+TEMPLATE,WS2812B,components\WS2812B.txt
+TEMPLATE,CAP,components\Capacitors SMD.txt
+
+# lets' get going ...
+
+# always, always first
+HEADER
+
+# move the origin to bottom left and compensate for Kicad's Y direction
+ORIGIN,0,190
+SETDIRECTION,1,-1
+
+GRAPHIC,TEXT,CENTER,145,170,0,5,.25,F.SilkS,SEGMENT-ARC Demo\nTargets show centres
+
+# some arcs
+# SEGMENT,ARC,CX,CY,Radius,startAngle,stopAngle,NumSegments,Width,Layer,Net
+
+# 4 quadrants
+SEGMENT,ARC,75,110,25,0,90,10,1,F.Cu,0
+TARGET,plus,75,110,5,.15,F.SilkS
+SEGMENT,ARC,50,110,25,90,180,10,1,F.Cu,0
+TARGET,plus,50,110,5,.15,F.SilkS
+SEGMENT,ARC,50,60,25,180,270,10,1,F.Cu,0
+TARGET,plus,50,60,5,.15,F.SilkS
+SEGMENT,ARC,75,60,25,270,360,10,1,F.Cu,0
+TARGET,plus,75,60,5,.15,F.SilkS
+GRAPHIC,TEXT,CENTER,62.5,85,0,2,.25,F.SilkS,4 quadrants\nNumSegments=10
+
+SEGMENT,ARC,150,110,25,90,250,10,1,F.Cu,0
+TARGET,plus,150,110,5,.15,F.SilkS
+GRAPHIC,TEXT,CENTER,150,105,0,2,.25,F.SilkS,Arc 90 to 250
+
+SEGMENT,ARC,195,110,25,20,70,10,1,F.Cu,0
+TARGET,plus,195,110,5,.15,F.SilkS
+GRAPHIC,TEXT,CENTER,195,105,0,2,.25,F.SilkS,Arc 20 to 70
+
+SEGMENT,ARC,150,60,25,200,220,10,1,F.Cu,0
+TARGET,plus,150,60,5,.15,F.SilkS
+GRAPHIC,TEXT,CENTER,150,55,0,2,.25,F.SilkS,Arc 200 to 220
+
+SEGMENT,ARC,195,60,25,100,80,10,1,F.Cu,0
+TARGET,plus,195,60,5,.15,F.SilkS
+GRAPHIC,TEXT,CENTER,195,55,0,2,.25,F.SilkS,Arc 100 to 80\n10 segments
+
+
+SEGMENT,ARC,255,60,25,100,80,180,1,F.Cu,0
+TARGET,plus,255,60,5,.15,F.SilkS
+GRAPHIC,TEXT,CENTER,255,55,0,2,.25,F.SilkS,Arc 100 to 80\n180 segments

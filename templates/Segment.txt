@@ -1,0 +1,1 @@
+(segment (start %XPOS1% %YPOS1%) (end %XPOS2% %YPOS2%) (width %WIDTH%) (layer %LAYER%) (net %NET%))

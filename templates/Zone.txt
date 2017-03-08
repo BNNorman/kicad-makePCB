@@ -1,0 +1,11 @@
+
+  (zone (net %NET%) (net_name "%NETNAME%") (layer %LAYER%) (tstamp 589D8DD7) (hatch %HATCHTYPE% %HATCHEDGE%)
+    (connect_pads (clearance %CLEARANCE%))
+    (min_thickness %MINTHICKNESS%)
+    (fill (arc_segments %ARCSEGMENTS%) (thermal_gap %THERMALGAP%) (thermal_bridge_width %THERMALBRIDGEWIDTH%))
+    (polygon
+      (pts
+        %XYPOINTS%
+      )
+    )
+  )

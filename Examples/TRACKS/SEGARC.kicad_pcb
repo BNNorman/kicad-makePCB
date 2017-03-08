@@ -1,0 +1,665 @@
+(
+kicad_pcb (version 4) (host pcbnew 4.0.4-stable)
+
+  (general
+    (links 0)
+    (no_connects 0)
+    (area 0 0 0 0)
+    (thickness 1.6)
+    (drawings 0)
+    (tracks 0)
+    (zones 0)
+    (modules 1)
+    (nets 1)
+  )
+
+  (page A4)
+  (layers
+    (0 F.Cu signal)
+    (31 B.Cu signal)
+    (32 B.Adhes user)
+    (33 F.Adhes user)
+    (34 B.Paste user)
+    (35 F.Paste user)
+    (36 B.SilkS user)
+    (37 F.SilkS user)
+    (38 B.Mask user)
+    (39 F.Mask user)
+    (40 Dwgs.User user)
+    (41 Cmts.User user)
+    (42 Eco1.User user)
+    (43 Eco2.User user)
+    (44 Edge.Cuts user)
+    (45 Margin user)
+    (46 B.CrtYd user)
+    (47 F.CrtYd user)
+    (48 B.Fab user)
+    (49 F.Fab user)
+  )
+
+  (setup
+    (last_trace_width 0.25)
+    (trace_clearance 0.2)
+    (zone_clearance 0.508)
+    (zone_45_only no)
+    (trace_min 0.2)
+    (segment_width 0.2)
+    (edge_width 0.15)
+    (via_size 0.6)
+    (via_drill 0.4)
+    (via_min_size 0.4)
+    (via_min_drill 0.3)
+    (uvia_size 0.3)
+    (uvia_drill 0.1)
+    (uvias_allowed no)
+    (uvia_min_size 0.2)
+    (uvia_min_drill 0.1)
+    (pcb_text_width 0.3)
+    (pcb_text_size 1.5 1.5)
+    (mod_edge_width 0.15)
+    (mod_text_size 1 1)
+    (mod_text_width 0.15)
+    (pad_size 1.524 1.524)
+    (pad_drill 0.762)
+    (pad_to_mask_clearance 0.2)
+    (aux_axis_origin 0 0)
+    (visible_elements FFFFFF7F)
+    (pcbplotparams
+      (layerselection 0x00030_80000001)
+      (usegerberextensions false)
+      (excludeedgelayer true)
+      (linewidth 0.100000)
+      (plotframeref false)
+      (viasonmask false)
+      (mode 1)
+      (useauxorigin false)
+      (hpglpennumber 1)
+      (hpglpenspeed 20)
+      (hpglpendiameter 15)
+      (hpglpenoverlay 2)
+      (psnegative false)
+      (psa4output false)
+      (plotreference true)
+      (plotvalue true)
+      (plotinvisibletext false)
+      (padsonsilk false)
+      (subtractmaskfromsilk false)
+      (outputformat 1)
+      (mirror false)
+      (drillshape 1)
+      (scaleselection 1)
+      (outputdirectory ""))
+  )
+
+  (net 0 "")
+
+  (net_class Default "This is the default net class."
+    (clearance 0.25)
+    (trace_width 0.25)
+    (via_dia 0.6)
+    (via_drill 0.4)
+    (uvia_dia 0.3)
+    (uvia_drill 0.1)
+  )
+
+
+
+ (gr_text "SEGMENT-ARC Demo\nTargets show centres" (at 145.0000 20.0000 0.0000) (layer F.SilkS)
+    (effects (font (size 5.0000 5.0000) (thickness .25))  )
+  )
+
+
+(segment (start 100.0000 80.0000) (end 99.6922 76.0891) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 99.6922 76.0891) (end 98.7764 72.2746) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 98.7764 72.2746) (end 97.2752 68.6502) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 97.2752 68.6502) (end 95.2254 65.3054) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 95.2254 65.3054) (end 92.6777 62.3223) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 92.6777 62.3223) (end 89.6946 59.7746) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 89.6946 59.7746) (end 86.3498 57.7248) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 86.3498 57.7248) (end 82.7254 56.2236) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 82.7254 56.2236) (end 78.9109 55.3078) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 78.9109 55.3078) (end 75.0000 55.0000) (width 1.0000) (layer F.Cu) (net 0))
+(target plus (at 75.0000 80.0000) (size 5.0000) (width 0.1500) (layer F.SilkS))
+
+
+(segment (start 50.0000 55.0000) (end 46.0891 55.3078) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 46.0891 55.3078) (end 42.2746 56.2236) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 42.2746 56.2236) (end 38.6502 57.7248) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 38.6502 57.7248) (end 35.3054 59.7746) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 35.3054 59.7746) (end 32.3223 62.3223) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 32.3223 62.3223) (end 29.7746 65.3054) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 29.7746 65.3054) (end 27.7248 68.6502) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 27.7248 68.6502) (end 26.2236 72.2746) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 26.2236 72.2746) (end 25.3078 76.0891) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 25.3078 76.0891) (end 25.0000 80.0000) (width 1.0000) (layer F.Cu) (net 0))
+(target plus (at 50.0000 80.0000) (size 5.0000) (width 0.1500) (layer F.SilkS))
+
+
+(segment (start 25.0000 130.0000) (end 25.3078 133.9109) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 25.3078 133.9109) (end 26.2236 137.7254) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 26.2236 137.7254) (end 27.7248 141.3498) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 27.7248 141.3498) (end 29.7746 144.6946) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 29.7746 144.6946) (end 32.3223 147.6777) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 32.3223 147.6777) (end 35.3054 150.2254) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 35.3054 150.2254) (end 38.6502 152.2752) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 38.6502 152.2752) (end 42.2746 153.7764) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 42.2746 153.7764) (end 46.0891 154.6922) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 46.0891 154.6922) (end 50.0000 155.0000) (width 1.0000) (layer F.Cu) (net 0))
+(target plus (at 50.0000 130.0000) (size 5.0000) (width 0.1500) (layer F.SilkS))
+
+
+(segment (start 75.0000 155.0000) (end 78.9109 154.6922) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 78.9109 154.6922) (end 82.7254 153.7764) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 82.7254 153.7764) (end 86.3498 152.2752) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 86.3498 152.2752) (end 89.6946 150.2254) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 89.6946 150.2254) (end 92.6777 147.6777) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 92.6777 147.6777) (end 95.2254 144.6946) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 95.2254 144.6946) (end 97.2752 141.3498) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 97.2752 141.3498) (end 98.7764 137.7254) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 98.7764 137.7254) (end 99.6922 133.9109) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 99.6922 133.9109) (end 100.0000 130.0000) (width 1.0000) (layer F.Cu) (net 0))
+(target plus (at 75.0000 130.0000) (size 5.0000) (width 0.1500) (layer F.SilkS))
+ (gr_text "4 quadrants\nNumSegments=10" (at 62.5000 105.0000 0.0000) (layer F.SilkS)
+    (effects (font (size 2.0000 2.0000) (thickness .25))  )
+  )
+
+
+(segment (start 150.0000 55.0000) (end 143.1091 55.9685) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 143.1091 55.9685) (end 136.7520 58.7988) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 136.7520 58.7988) (end 131.4214 63.2717) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 131.4214 63.2717) (end 127.5301 69.0407) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 127.5301 69.0407) (end 125.3798 75.6588) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 125.3798 75.6588) (end 125.1370 82.6132) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 125.1370 82.6132) (end 126.8204 89.3652) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 126.8204 89.3652) (end 130.2997 95.3915) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 130.2997 95.3915) (end 135.3054 100.2254) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 135.3054 100.2254) (end 141.4495 103.4923) (width 1.0000) (layer F.Cu) (net 0))
+(target plus (at 150.0000 80.0000) (size 5.0000) (width 0.1500) (layer F.SilkS))
+ (gr_text "Arc 90 to 250" (at 150.0000 85.0000 0.0000) (layer F.SilkS)
+    (effects (font (size 2.0000 2.0000) (thickness .25))  )
+  )
+
+
+(segment (start 218.4923 71.4495) (end 217.6577 69.4345) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 217.6577 69.4345) (end 216.6506 67.5000) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 216.6506 67.5000) (end 215.4788 65.6606) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 215.4788 65.6606) (end 214.1511 63.9303) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 214.1511 63.9303) (end 212.6777 62.3223) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 212.6777 62.3223) (end 211.0697 60.8489) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 211.0697 60.8489) (end 209.3394 59.5212) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 209.3394 59.5212) (end 207.5000 58.3494) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 207.5000 58.3494) (end 205.5655 57.3423) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 205.5655 57.3423) (end 203.5505 56.5077) (width 1.0000) (layer F.Cu) (net 0))
+(target plus (at 195.0000 80.0000) (size 5.0000) (width 0.1500) (layer F.SilkS))
+ (gr_text "Arc 20 to 70" (at 195.0000 85.0000 0.0000) (layer F.SilkS)
+    (effects (font (size 2.0000 2.0000) (thickness .25))  )
+  )
+
+
+(segment (start 126.5077 138.5505) (end 126.8204 139.3652) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 126.8204 139.3652) (end 127.1614 140.1684) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 127.1614 140.1684) (end 127.5301 140.9593) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 127.5301 140.9593) (end 127.9263 141.7368) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 127.9263 141.7368) (end 128.3494 142.5000) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 128.3494 142.5000) (end 128.7988 143.2480) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 128.7988 143.2480) (end 129.2741 143.9798) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 129.2741 143.9798) (end 129.7746 144.6946) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 129.7746 144.6946) (end 130.2997 145.3915) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 130.2997 145.3915) (end 130.8489 146.0697) (width 1.0000) (layer F.Cu) (net 0))
+(target plus (at 150.0000 130.0000) (size 5.0000) (width 0.1500) (layer F.SilkS))
+ (gr_text "Arc 200 to 220" (at 150.0000 135.0000 0.0000) (layer F.SilkS)
+    (effects (font (size 2.0000 2.0000) (thickness .25))  )
+  )
+
+
+(segment (start 190.6588 105.3798) (end 177.6335 112.0165) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 177.6335 112.0165) (end 170.5463 124.8022) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 170.5463 124.8022) (end 171.8204 139.3652) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 171.8204 139.3652) (end 181.0202 150.7259) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 181.0202 150.7259) (end 195.0000 155.0000) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 195.0000 155.0000) (end 208.9798 150.7259) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 208.9798 150.7259) (end 218.1796 139.3652) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 218.1796 139.3652) (end 219.4537 124.8022) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 219.4537 124.8022) (end 212.3665 112.0165) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 212.3665 112.0165) (end 199.3412 105.3798) (width 1.0000) (layer F.Cu) (net 0))
+(target plus (at 195.0000 130.0000) (size 5.0000) (width 0.1500) (layer F.SilkS))
+ (gr_text "Arc 100 to 80\n10 segments" (at 195.0000 135.0000 0.0000) (layer F.SilkS)
+    (effects (font (size 2.0000 2.0000) (thickness .25))  )
+  )
+
+
+(segment (start 250.6588 105.3798) (end 249.8496 105.5363) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 249.8496 105.5363) (end 249.0461 105.7193) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 249.0461 105.7193) (end 248.2490 105.9288) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 248.2490 105.9288) (end 247.4592 106.1644) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 247.4592 106.1644) (end 246.6777 106.4259) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 246.6777 106.4259) (end 245.9052 106.7130) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 245.9052 106.7130) (end 245.1425 107.0254) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 245.1425 107.0254) (end 244.3906 107.3628) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 244.3906 107.3628) (end 243.6502 107.7248) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 243.6502 107.7248) (end 242.9222 108.1110) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 242.9222 108.1110) (end 242.2073 108.5210) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 242.2073 108.5210) (end 241.5062 108.9544) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 241.5062 108.9544) (end 240.8199 109.4106) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 240.8199 109.4106) (end 240.1489 109.8892) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 240.1489 109.8892) (end 239.4941 110.3896) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 239.4941 110.3896) (end 238.8562 110.9114) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 238.8562 110.9114) (end 238.2357 111.4539) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 238.2357 111.4539) (end 237.6335 112.0165) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 237.6335 112.0165) (end 237.0502 112.5987) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 237.0502 112.5987) (end 236.4864 113.1998) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 236.4864 113.1998) (end 235.9427 113.8192) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 235.9427 113.8192) (end 235.4197 114.4561) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 235.4197 114.4561) (end 234.9180 115.1100) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 234.9180 115.1100) (end 234.4381 115.7800) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 234.4381 115.7800) (end 233.9806 116.4654) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 233.9806 116.4654) (end 233.5459 117.1656) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 233.5459 117.1656) (end 233.1345 117.8798) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 233.1345 117.8798) (end 232.7469 118.6071) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 232.7469 118.6071) (end 232.3835 119.3467) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 232.3835 119.3467) (end 232.0446 120.0980) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 232.0446 120.0980) (end 231.7307 120.8600) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 231.7307 120.8600) (end 231.4421 121.6320) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 231.4421 121.6320) (end 231.1790 122.4130) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 231.1790 122.4130) (end 230.9419 123.2023) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 230.9419 123.2023) (end 230.7309 123.9990) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 230.7309 123.9990) (end 230.5463 124.8022) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 230.5463 124.8022) (end 230.3883 125.6111) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 230.3883 125.6111) (end 230.2570 126.4247) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 230.2570 126.4247) (end 230.1526 127.2422) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 230.1526 127.2422) (end 230.0752 128.0627) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 230.0752 128.0627) (end 230.0249 128.8853) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 230.0249 128.8853) (end 230.0017 129.7091) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 230.0017 129.7091) (end 230.0057 130.5333) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 230.0057 130.5333) (end 230.0368 131.3568) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 230.0368 131.3568) (end 230.0951 132.1789) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 230.0951 132.1789) (end 230.1805 132.9986) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 230.1805 132.9986) (end 230.2928 133.8151) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 230.2928 133.8151) (end 230.4320 134.6274) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 230.4320 134.6274) (end 230.5979 135.4347) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 230.5979 135.4347) (end 230.7903 136.2360) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 230.7903 136.2360) (end 231.0090 137.0306) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 231.0090 137.0306) (end 231.2537 137.8176) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 231.2537 137.8176) (end 231.5243 138.5960) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 231.5243 138.5960) (end 231.8204 139.3652) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 231.8204 139.3652) (end 232.1417 140.1241) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 232.1417 140.1241) (end 232.4878 140.8720) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 232.4878 140.8720) (end 232.8584 141.6082) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 232.8584 141.6082) (end 233.2531 142.3317) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 233.2531 142.3317) (end 233.6713 143.0418) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 233.6713 143.0418) (end 234.1128 143.7377) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 234.1128 143.7377) (end 234.5770 144.4187) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 234.5770 144.4187) (end 235.0633 145.0841) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 235.0633 145.0841) (end 235.5714 145.7330) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 235.5714 145.7330) (end 236.1005 146.3649) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 236.1005 146.3649) (end 236.6502 146.9789) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 236.6502 146.9789) (end 237.2198 147.5745) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 237.2198 147.5745) (end 237.8087 148.1510) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 237.8087 148.1510) (end 238.4164 148.7078) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 238.4164 148.7078) (end 239.0420 149.2443) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 239.0420 149.2443) (end 239.6850 149.7598) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 239.6850 149.7598) (end 240.3446 150.2539) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 240.3446 150.2539) (end 241.0202 150.7259) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 241.0202 150.7259) (end 241.7109 151.1755) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 241.7109 151.1755) (end 242.4161 151.6020) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 242.4161 151.6020) (end 243.1350 152.0050) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 243.1350 152.0050) (end 243.8668 152.3842) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 243.8668 152.3842) (end 244.6106 152.7390) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 244.6106 152.7390) (end 245.3658 153.0691) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 245.3658 153.0691) (end 246.1314 153.3741) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 246.1314 153.3741) (end 246.9067 153.6537) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 246.9067 153.6537) (end 247.6907 153.9076) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 247.6907 153.9076) (end 248.4827 154.1356) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 248.4827 154.1356) (end 249.2818 154.3373) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 249.2818 154.3373) (end 250.0871 154.5125) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 250.0871 154.5125) (end 250.8977 154.6611) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 250.8977 154.6611) (end 251.7128 154.7829) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 251.7128 154.7829) (end 252.5315 154.8778) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 252.5315 154.8778) (end 253.3528 154.9457) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 253.3528 154.9457) (end 254.1760 154.9864) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 254.1760 154.9864) (end 255.0000 155.0000) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 255.0000 155.0000) (end 255.8240 154.9864) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 255.8240 154.9864) (end 256.6472 154.9457) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 256.6472 154.9457) (end 257.4685 154.8778) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 257.4685 154.8778) (end 258.2872 154.7829) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 258.2872 154.7829) (end 259.1023 154.6611) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 259.1023 154.6611) (end 259.9129 154.5125) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 259.9129 154.5125) (end 260.7182 154.3373) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 260.7182 154.3373) (end 261.5173 154.1356) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 261.5173 154.1356) (end 262.3093 153.9076) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 262.3093 153.9076) (end 263.0933 153.6537) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 263.0933 153.6537) (end 263.8686 153.3741) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 263.8686 153.3741) (end 264.6342 153.0691) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 264.6342 153.0691) (end 265.3894 152.7390) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 265.3894 152.7390) (end 266.1332 152.3842) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 266.1332 152.3842) (end 266.8650 152.0050) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 266.8650 152.0050) (end 267.5839 151.6020) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 267.5839 151.6020) (end 268.2891 151.1755) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 268.2891 151.1755) (end 268.9798 150.7259) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 268.9798 150.7259) (end 269.6554 150.2539) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 269.6554 150.2539) (end 270.3150 149.7598) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 270.3150 149.7598) (end 270.9580 149.2443) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 270.9580 149.2443) (end 271.5836 148.7078) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 271.5836 148.7078) (end 272.1913 148.1510) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 272.1913 148.1510) (end 272.7802 147.5745) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 272.7802 147.5745) (end 273.3498 146.9789) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 273.3498 146.9789) (end 273.8995 146.3649) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 273.8995 146.3649) (end 274.4286 145.7330) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 274.4286 145.7330) (end 274.9367 145.0841) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 274.9367 145.0841) (end 275.4230 144.4187) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 275.4230 144.4187) (end 275.8872 143.7377) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 275.8872 143.7377) (end 276.3287 143.0418) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 276.3287 143.0418) (end 276.7469 142.3317) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 276.7469 142.3317) (end 277.1416 141.6082) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 277.1416 141.6082) (end 277.5122 140.8720) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 277.5122 140.8720) (end 277.8583 140.1241) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 277.8583 140.1241) (end 278.1796 139.3652) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 278.1796 139.3652) (end 278.4757 138.5960) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 278.4757 138.5960) (end 278.7463 137.8176) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 278.7463 137.8176) (end 278.9910 137.0306) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 278.9910 137.0306) (end 279.2097 136.2360) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 279.2097 136.2360) (end 279.4021 135.4347) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 279.4021 135.4347) (end 279.5680 134.6274) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 279.5680 134.6274) (end 279.7072 133.8151) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 279.7072 133.8151) (end 279.8195 132.9986) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 279.8195 132.9986) (end 279.9049 132.1789) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 279.9049 132.1789) (end 279.9632 131.3568) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 279.9632 131.3568) (end 279.9943 130.5333) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 279.9943 130.5333) (end 279.9983 129.7091) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 279.9983 129.7091) (end 279.9751 128.8853) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 279.9751 128.8853) (end 279.9248 128.0627) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 279.9248 128.0627) (end 279.8474 127.2422) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 279.8474 127.2422) (end 279.7430 126.4247) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 279.7430 126.4247) (end 279.6117 125.6111) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 279.6117 125.6111) (end 279.4537 124.8022) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 279.4537 124.8022) (end 279.2691 123.9990) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 279.2691 123.9990) (end 279.0581 123.2023) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 279.0581 123.2023) (end 278.8210 122.4130) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 278.8210 122.4130) (end 278.5579 121.6320) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 278.5579 121.6320) (end 278.2693 120.8600) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 278.2693 120.8600) (end 277.9554 120.0980) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 277.9554 120.0980) (end 277.6165 119.3467) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 277.6165 119.3467) (end 277.2531 118.6071) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 277.2531 118.6071) (end 276.8655 117.8798) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 276.8655 117.8798) (end 276.4541 117.1656) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 276.4541 117.1656) (end 276.0194 116.4654) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 276.0194 116.4654) (end 275.5619 115.7800) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 275.5619 115.7800) (end 275.0820 115.1100) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 275.0820 115.1100) (end 274.5803 114.4561) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 274.5803 114.4561) (end 274.0573 113.8192) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 274.0573 113.8192) (end 273.5136 113.1998) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 273.5136 113.1998) (end 272.9498 112.5987) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 272.9498 112.5987) (end 272.3665 112.0165) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 272.3665 112.0165) (end 271.7643 111.4539) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 271.7643 111.4539) (end 271.1438 110.9114) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 271.1438 110.9114) (end 270.5059 110.3896) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 270.5059 110.3896) (end 269.8511 109.8892) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 269.8511 109.8892) (end 269.1801 109.4106) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 269.1801 109.4106) (end 268.4938 108.9544) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 268.4938 108.9544) (end 267.7927 108.5210) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 267.7927 108.5210) (end 267.0778 108.1110) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 267.0778 108.1110) (end 266.3498 107.7248) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 266.3498 107.7248) (end 265.6094 107.3628) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 265.6094 107.3628) (end 264.8575 107.0254) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 264.8575 107.0254) (end 264.0948 106.7130) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 264.0948 106.7130) (end 263.3223 106.4259) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 263.3223 106.4259) (end 262.5408 106.1644) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 262.5408 106.1644) (end 261.7510 105.9288) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 261.7510 105.9288) (end 260.9539 105.7193) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 260.9539 105.7193) (end 260.1504 105.5363) (width 1.0000) (layer F.Cu) (net 0))
+
+(segment (start 260.1504 105.5363) (end 259.3412 105.3798) (width 1.0000) (layer F.Cu) (net 0))
+(target plus (at 255.0000 130.0000) (size 5.0000) (width 0.1500) (layer F.SilkS))
+ (gr_text "Arc 100 to 80\n180 segments" (at 255.0000 135.0000 0.0000) (layer F.SilkS)
+    (effects (font (size 2.0000 2.0000) (thickness .25))  )
+  ))
