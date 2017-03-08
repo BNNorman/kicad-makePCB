@@ -18,6 +18,6 @@ Can be used to create a new kicad_pcb file from scratch or add to an exisiting k
 
 *Components can be grouped and manipulated together
 
-*Supports gloabl and local variables with simple arithmetic
+*Supports global and local variables with simple arithmetic
 
 *The drawing origin can be moved down from top left to bottom left to be more human friendly
