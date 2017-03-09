@@ -1,9 +1,9 @@
 # KiCadParser.py
 #
-# Ver: 1.0.0
+# Ver: 1.1.0
 #
 # Author: Brian N Norman
-# Date: 8/3/17
+# Date: 9/3/17
 #
 # Processes CSV data strings. Replaces place holders (%...%) in template files
 # returns the result for output to the kicad_pcb file
@@ -604,14 +604,20 @@ class KiCadParser():
         ringId=ringId.strip()
         # make sure numeric params have variables subsituted and are float
         stepAngle=self.evalNumericParam(stepAngle)
-        Mode=self.evalNumericParam(Mode)    # rotation angle 0->radial alignment,-/+90 gives tangential
+
+        if Mode.upper()=="NONE":
+            # we don't want component rotation
+            Mode=None
+        else:
+            Mode = self.evalNumericParam(Mode)  # rotation angle 0->radial alignment,-/+90 gives tangential
+
         Xpos=self.evalNumericParam(Xpos)
         Ypos=self.evalNumericParam(Ypos)
         Radius=self.evalNumericParam(Radius)
         startAngle=self.evalNumericParam(startAngle)
         Counter=self.evalNumericParam(Counter)
 
-        if self.anyIsNone(Xpos, Ypos, Radius,Mode,startAngle,Counter,stepAngle):
+        if self.anyIsNone(Xpos, Ypos, Radius,startAngle,Counter,stepAngle):
             self.Warning("One or more RING parameters did not resolve as a number. Ring ignored.")
             return None
 
@@ -642,7 +648,12 @@ class KiCadParser():
         for i in range(int(Counter)):
             # get 0,0 position of the component/group
             self.state.ringX,self.state.ringY=self.getCircleXY(self.state.ringCx,self.state.ringCy,self.state.ringRad,thisAngle)
-            self.state.ringAngle=thisAngle+Mode
+            self.state.ringAngle=thisAngle
+
+            # do we want the components rotated?
+            if Mode is None: self.state.ringAngle=0
+            else: self.state.ringAngle=thisAngle+Mode
+
             for c in self.state.ringList:
                 (lineNum, id, params) = c
                 r = self.parse(lineNum, id, params)
