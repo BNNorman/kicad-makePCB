@@ -6,7 +6,7 @@ Can be used to create a new kicad_pcb file from scratch or add to an exisiting k
 ##Features:-
 *Does not use pcbnew.py nor does it need pcbnew to be running
 
-*Zones/Keepouts can have the following shapes : Poly, Circle, Cross, Donut (open or closed) , Hollow Rectangle, Pie, rectangle, rectangle with rounded corners
+*Zones/Keepouts can have the following shapes : Poly, PolyList, Circle, Cross, Donut (open or closed) , Hollow Rectangle, Pie, rectangle, rectangle with rounded corners
 
 *Tracks can be Arc, Circle, Grid or just Line
 
