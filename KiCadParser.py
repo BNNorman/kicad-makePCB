@@ -1,9 +1,9 @@
 # KiCadParser.py
 #
-# Ver: 1.1.0
+# Ver: 1.2.0
 #
 # Author: Brian N Norman
-# Date: 9/3/17
+# Date: 13th March 2017
 #
 # Processes CSV data strings. Replaces place holders (%...%) in template files
 # returns the result for output to the kicad_pcb file
@@ -1878,6 +1878,7 @@ class KiCadParser():
         elif Shape=="ROUNDEDRECT":  return self.zone_roundedrect(Remainder)
         elif Shape=="DONUT":        return self.zone_donut(Remainder)
         elif Shape=="HOLLOWRECT":   return self.zone_hollow_rect_centred(Remainder)
+        elif Shape=="POLYLIST":    return self.zone_polylist(Remainder)
         self.Warning("Unknown zone/keepout shape '"+Shape+"'. Zone/keepout ignored.")
         return None
 
@@ -1915,6 +1916,26 @@ class KiCadParser():
 
         return self.zone_poly_helper(Net, NetName, Layer, HatchType, HatchEdge, Clearance, MinThickness, FillArcSegment,ThermalGap, FillThermalBridge,coords)
 
+    # create a zone based on a list of coordinates
+    def zone_polylist(self,params):
+        ListName,X,Y,Net, NetName, Layer, HatchType, HatchEdge, Clearance, MinThickness, FillArcSegment, ThermalGap,FillThermalBridge=params.split(",")
+        if ListName not in self.list:
+            self.Warning("Named list "+ListName+" hasn't been loaded for zone polylist. Zone ignored.")
+
+        X,Y=self.resolveCoords(X,Y)
+        if self.anyIsNone(ListName,X,Y):
+            self.cannotAdd("ZONE POLYLIST")
+            return None
+
+        # list is expected to be a list of tuples
+        coords=[]
+        for xyPair in self.list[ListName]:
+            (px,py)=xyPair
+            px,py=self.directionX*float(px),self.directionY*float(py)
+            coords.append((px+Y,py+Y))
+
+        return self.zone_poly_helper(Net, NetName, Layer, HatchType, HatchEdge, Clearance, MinThickness, FillArcSegment,
+                                     ThermalGap, FillThermalBridge, coords)
 
     def zone_roundedrect(self,params):
         X,Y,Width,Height,Radius,Smooth,Net, NetName, Layer, HatchType, HatchEdge, Clearance, MinThickness, FillArcSegment,ThermalGap, FillThermalBridge=params.split(",")
