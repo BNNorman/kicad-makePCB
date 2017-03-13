@@ -1,0 +1,8 @@
+ASIS,HEADER,templates\Header.txt
+LIST,STAR,#,Star.txt
+TEMPLATE,ZONE,templates\Zone.txt
+
+HEADER
+ORIGIN,20,197
+ZONE,POLYLIST,STAR,100,100,0,,F.Cu,full,0.508,0.508,0.254,16,0.508,.508
+
